@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/w3.css">
+<script src="scripts/jquery-2.2.3.min.js"></script>
+<script src="scripts/moment.js"></script>
+<script src="scripts/datePicker.js"></script>
+<script>
+moment().format();
+function Start(){
+	var d = DatePicker(document.getElementById('calendar'));
+	d.addEventListener("dateselect", function(e){
+		alert("You selected " + moment(e.selectedDay).format('dddd, MMMM Do, YYYY'));
+	});
+}
+</script>
+</head>
+<body>
+<div class="w3-container w3-center w3-padding-64">
+	<button class="w3-btn" onclick=Start()>Click here to show calendar</button>
+	<div class="w3-center w3-padding-4" id='calendar'></div>
+</div>
+</body>
+</html>
